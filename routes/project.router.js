@@ -7,6 +7,7 @@ projectRouter.get("/", async (req, res) => {
 
     let { q, sort, page = 1, limit = 10 } = req.query;
     // Optimized logic
+    console.log("qqqq",q,sort)
     try {
         let query = q
             ? {
@@ -25,9 +26,7 @@ projectRouter.get("/", async (req, res) => {
             : {};
 
         let totalData = await ProjectModel.find(query);
-        let result = await Project.find(query).sort(sort ? { [sort]: 1 } : {})
-            .limit(limit)
-            .skip((page - 1) * limit);
+        let result = await Project.find(query).sort(sort ? { [sort]: 1 } : {}).limit(parseInt(limit)).skip(parseInt(page - 1) * parseInt(limit));
 
         return res.status(200).send({ status: true, result, total: totalData.length });
 

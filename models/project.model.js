@@ -9,6 +9,14 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  startDate: { 
+    type: Number,
+    required: true
+  },
+  endDate: {
+    type: Number,
+    required: true
+  },
   priority: { 
     type: String, 
     enum: ["High", "Medium", "Low"], 
