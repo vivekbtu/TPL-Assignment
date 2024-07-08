@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors")
+const bodyParser = require("body-parser");
 
 
 const { connection } = require("./config/db");
@@ -12,6 +13,7 @@ app.use(express.json())
 app.use(cors({
     origin : "*"
 }))
+app.use(bodyParser.json());
 
 require("dotenv").config();
 

@@ -34,7 +34,7 @@ const projectSchema = new mongoose.Schema({
   },
   division: {
     type: String,
-    enum: ["Pumps", "Filters", "Compressor", "Glass"],
+    enum: ["Pumps", "Filters", "Compressor", "Glass", "Water Heater"],
     required: true,
   },
   category: {
