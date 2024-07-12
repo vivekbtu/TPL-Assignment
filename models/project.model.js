@@ -9,6 +9,11 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  projectManager: { 
+    type: String,
+    enum: ["person-x", "person-y", "person-z"],
+    required: true
+  },
   startDate: { 
     type: Number,
     required: true

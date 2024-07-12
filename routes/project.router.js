@@ -21,6 +21,7 @@ projectRouter.get("/", async (req, res) => {
                     { department: new RegExp(q, "i") },
                     { location: new RegExp(q, "i") },
                     { status: new RegExp(q, "i") },
+                    { projectManager: new RegExp(q, "i") },
                 ],
             }
             : {};
